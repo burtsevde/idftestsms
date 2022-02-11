@@ -18,13 +18,10 @@
     token = '';
     
     try {
-      const response = (async () => {
-          // ваш код
-            await fetch('https://testoauth.homebank.kz/epay2/oauth2/token', {
-                method: 'POST',
-                body: formData
-              });
-          })();
+      const response = fetch('https://testoauth.homebank.kz/epay2/oauth2/token', {
+            method: 'POST',
+            body: formData
+          });
           const result = await response.json();
           token = result;
           console.log('Успех:', JSON.stringify(result));
